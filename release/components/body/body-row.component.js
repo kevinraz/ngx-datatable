@@ -161,16 +161,6 @@ var DataTableBodyRowComponent = /** @class */ (function () {
             });
         }
     };
-    DataTableBodyRowComponent.prototype.onMouseenter = function (event) {
-        if (this.enableMouseEnter) {
-            this.activate.emit({
-                type: 'mouseenter',
-                event: event,
-                row: this.row,
-                rowElement: this._element
-            });
-        }
-    };
     DataTableBodyRowComponent.prototype.recalculateColumns = function (val) {
         if (val === void 0) { val = this.columns; }
         this._columns = val;
@@ -210,10 +200,6 @@ var DataTableBodyRowComponent = /** @class */ (function () {
     ], DataTableBodyRowComponent.prototype, "isSelected", void 0);
     __decorate([
         core_1.Input(),
-        __metadata("design:type", Boolean)
-    ], DataTableBodyRowComponent.prototype, "enableMouseEnter", void 0);
-    __decorate([
-        core_1.Input(),
         __metadata("design:type", Number)
     ], DataTableBodyRowComponent.prototype, "rowIndex", void 0);
     __decorate([
@@ -250,12 +236,6 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], DataTableBodyRowComponent.prototype, "onKeyDown", null);
-    __decorate([
-        core_1.HostListener('mouseenter', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DataTableBodyRowComponent.prototype, "onMouseenter", null);
     DataTableBodyRowComponent = __decorate([
         core_1.Component({
             selector: 'datatable-body-row',

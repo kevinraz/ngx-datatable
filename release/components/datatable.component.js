@@ -169,10 +169,6 @@ var DatatableComponent = /** @class */ (function () {
          */
         this.summaryPosition = 'top';
         /**
-         * A flag for enabling mouse event to be emitted on mouse enter for each cell
-         */
-        this.enableMouseEnter = false;
-        /**
          * Body was scrolled typically in a `scrollbarV:true` scenario.
          */
         this.scroll = new core_1.EventEmitter();
@@ -1020,10 +1016,6 @@ var DatatableComponent = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", String)
     ], DatatableComponent.prototype, "summaryPosition", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Boolean)
-    ], DatatableComponent.prototype, "enableMouseEnter", void 0);
     __decorate([
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)

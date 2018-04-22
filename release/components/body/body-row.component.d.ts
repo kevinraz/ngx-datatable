@@ -11,7 +11,6 @@ export declare class DataTableBodyRowComponent implements DoCheck {
     row: any;
     group: any;
     isSelected: boolean;
-    enableMouseEnter: boolean;
     rowIndex: number;
     displayCheck: any;
     offsetX: number;
@@ -41,6 +40,5 @@ export declare class DataTableBodyRowComponent implements DoCheck {
     };
     onActivate(event: any, index: number): void;
     onKeyDown(event: KeyboardEvent): void;
-    onMouseenter(event: any): void;
     recalculateColumns(val?: any[]): void;
 }

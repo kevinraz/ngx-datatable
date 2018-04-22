@@ -233,10 +233,6 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
      */
     summaryPosition: string;
     /**
-     * A flag for enabling mouse event to be emitted on mouse enter for each cell
-     */
-    enableMouseEnter: boolean;
-    /**
      * Body was scrolled typically in a `scrollbarV:true` scenario.
      */
     scroll: EventEmitter<any>;

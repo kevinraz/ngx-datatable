@@ -20,7 +20,6 @@ export declare class DataTableBodyComponent implements OnInit, OnDestroy {
     displayCheck: any;
     trackByProp: string;
     rowClass: any;
-    enableMouseEnter: boolean;
     groupedRows: any;
     groupExpansionDefault: boolean;
     innerWidth: number;
