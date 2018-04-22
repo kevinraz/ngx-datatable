@@ -65,6 +65,7 @@ export class DataTableBodyRowComponent implements DoCheck {
   @Input() row: any;
   @Input() group: any;
   @Input() isSelected: boolean;
+  @Input() enableMouseEnter: boolean;
   @Input() rowIndex: number;
   @Input() displayCheck: any;
 
@@ -205,12 +206,14 @@ export class DataTableBodyRowComponent implements DoCheck {
 
   @HostListener('mouseenter', ['$event'])
   onMouseenter(event: any): void {
-    this.activate.emit({
+    if(this.enableMouseEnter) {
+      this.activate.emit({
         type: 'mouseenter',
         event,
         row: this.row,
         rowElement: this._element
       });
+    }
   }
 
   recalculateColumns(val: any[] = this.columns): void {
