@@ -162,12 +162,14 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         }
     };
     DataTableBodyRowComponent.prototype.onMouseenter = function (event) {
-        this.activate.emit({
-            type: 'mouseenter',
-            event: event,
-            row: this.row,
-            rowElement: this._element
-        });
+        if (this.enableMouseEnter) {
+            this.activate.emit({
+                type: 'mouseenter',
+                event: event,
+                row: this.row,
+                rowElement: this._element
+            });
+        }
     };
     DataTableBodyRowComponent.prototype.recalculateColumns = function (val) {
         if (val === void 0) { val = this.columns; }
@@ -206,6 +208,10 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", Boolean)
     ], DataTableBodyRowComponent.prototype, "isSelected", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], DataTableBodyRowComponent.prototype, "enableMouseEnter", void 0);
     __decorate([
         core_1.Input(),
         __metadata("design:type", Number)

@@ -13,6 +13,10 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
     private dimensionsHelper;
     private cd;
     /**
+     * Template for the target marker of drag target columns.
+     */
+    targetMarkerTemplate: any;
+    /**
      * Gets the rows.
      */
     /**
@@ -135,6 +139,11 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
      */
     reorderable: boolean;
     /**
+     * Swap columns on re-order columns or
+     * move them.
+     */
+    swapColumns: boolean;
+    /**
      * The type of sorting
      */
     sortType: SortType;
@@ -223,6 +232,10 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
      * A property holds a summary row position: top/bottom
      */
     summaryPosition: string;
+    /**
+     * A flag for enabling mouse event to be emitted on mouse enter for each cell
+     */
+    enableMouseEnter: boolean;
     /**
      * Body was scrolled typically in a `scrollbarV:true` scenario.
      */

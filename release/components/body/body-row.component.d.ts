@@ -11,6 +11,7 @@ export declare class DataTableBodyRowComponent implements DoCheck {
     row: any;
     group: any;
     isSelected: boolean;
+    enableMouseEnter: boolean;
     rowIndex: number;
     displayCheck: any;
     offsetX: number;
