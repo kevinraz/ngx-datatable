@@ -80,7 +80,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
         [summaryRow]="summaryRow"
         [summaryHeight]="summaryHeight"
         [summaryPosition]="summaryPosition"
-        [enableMouseEnter]="enableMouseEnter"
         (page)="onBodyPage($event)"
         (activate)="activate.emit($event)"
         (rowContextmenu)="onRowContextmenu($event)"
