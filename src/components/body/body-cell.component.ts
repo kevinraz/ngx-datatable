@@ -273,7 +273,7 @@ export class DataTableBodyCellComponent implements DoCheck, OnDestroy {
     });
   }
 
-  @HostListener('dblclick', ['$event'])
+  /*@HostListener('dblclick', ['$event'])
   onDblClick(event: MouseEvent): void {
     this.activate.emit({
       type: 'dblclick',
@@ -285,9 +285,9 @@ export class DataTableBodyCellComponent implements DoCheck, OnDestroy {
       value: this.value,      
       cellElement: this._element
     });
-  }
+  }*/
 
-  @HostListener('keydown', ['$event'])
+  /*@HostListener('keydown', ['$event'])
   onKeyDown(event: KeyboardEvent): void {
     const keyCode = event.keyCode;
     const isTargetCell = event.target === this._element;
@@ -314,7 +314,7 @@ export class DataTableBodyCellComponent implements DoCheck, OnDestroy {
         cellElement: this._element
       });
     }
-  }
+  }*/
 
   onCheckboxChange(event: any): void {
     this.activate.emit({

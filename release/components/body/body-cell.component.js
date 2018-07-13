@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var utils_1 = require("../../utils");
 var types_1 = require("../../types");
 var events_1 = require("../../events");
 var DataTableBodyCellComponent = /** @class */ (function () {
@@ -253,41 +252,47 @@ var DataTableBodyCellComponent = /** @class */ (function () {
             cellElement: this._element
         });
     };
-    DataTableBodyCellComponent.prototype.onDblClick = function (event) {
+    /*@HostListener('dblclick', ['$event'])
+    onDblClick(event: MouseEvent): void {
+      this.activate.emit({
+        type: 'dblclick',
+        event,
+        row: this.row,
+        group: this.group,
+        rowHeight: this.rowHeight,
+        column: this.column,
+        value: this.value,
+        cellElement: this._element
+      });
+    }*/
+    /*@HostListener('keydown', ['$event'])
+    onKeyDown(event: KeyboardEvent): void {
+      const keyCode = event.keyCode;
+      const isTargetCell = event.target === this._element;
+  
+      const isAction =
+        keyCode === Keys.return ||
+        keyCode === Keys.down ||
+        keyCode === Keys.up ||
+        keyCode === Keys.left ||
+        keyCode === Keys.right;
+  
+      if (isAction && isTargetCell) {
+        event.preventDefault();
+        event.stopPropagation();
+  
         this.activate.emit({
-            type: 'dblclick',
-            event: event,
-            row: this.row,
-            group: this.group,
-            rowHeight: this.rowHeight,
-            column: this.column,
-            value: this.value,
-            cellElement: this._element
+          type: 'keydown',
+          event,
+          row: this.row,
+          group: this.group,
+          rowHeight: this.rowHeight,
+          column: this.column,
+          value: this.value,
+          cellElement: this._element
         });
-    };
-    DataTableBodyCellComponent.prototype.onKeyDown = function (event) {
-        var keyCode = event.keyCode;
-        var isTargetCell = event.target === this._element;
-        var isAction = keyCode === utils_1.Keys.return ||
-            keyCode === utils_1.Keys.down ||
-            keyCode === utils_1.Keys.up ||
-            keyCode === utils_1.Keys.left ||
-            keyCode === utils_1.Keys.right;
-        if (isAction && isTargetCell) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.activate.emit({
-                type: 'keydown',
-                event: event,
-                row: this.row,
-                group: this.group,
-                rowHeight: this.rowHeight,
-                column: this.column,
-                value: this.value,
-                cellElement: this._element
-            });
-        }
-    };
+      }
+    }*/
     DataTableBodyCellComponent.prototype.onCheckboxChange = function (event) {
         this.activate.emit({
             type: 'checkbox',
@@ -410,18 +415,6 @@ var DataTableBodyCellComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], DataTableBodyCellComponent.prototype, "onClick", null);
-    __decorate([
-        core_1.HostListener('dblclick', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DataTableBodyCellComponent.prototype, "onDblClick", null);
-    __decorate([
-        core_1.HostListener('keydown', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DataTableBodyCellComponent.prototype, "onKeyDown", null);
     DataTableBodyCellComponent = __decorate([
         core_1.Component({
             selector: 'datatable-body-cell',

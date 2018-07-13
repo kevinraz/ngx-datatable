@@ -39,6 +39,5 @@ export declare class DataTableBodyRowComponent implements DoCheck {
         width: string;
     };
     onActivate(event: any, index: number): void;
-    onKeyDown(event: KeyboardEvent): void;
     recalculateColumns(val?: any[]): void;
 }

@@ -178,7 +178,7 @@ export class DataTableBodyRowComponent implements DoCheck {
     this.activate.emit(event);
   }
 
-  @HostListener('keydown', ['$event'])
+  /*@HostListener('keydown', ['$event'])
   onKeyDown(event: KeyboardEvent): void {
     const keyCode = event.keyCode;
     const isTargetRow = event.target === this._element;
@@ -201,7 +201,7 @@ export class DataTableBodyRowComponent implements DoCheck {
         rowElement: this._element
       });
     }
-  }
+  }*/
 
   recalculateColumns(val: any[] = this.columns): void {
     this._columns = val;

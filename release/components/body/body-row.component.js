@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var utils_1 = require("../../utils");
 var services_1 = require("../../services");
-var events_1 = require("../../events");
 var DataTableBodyRowComponent = /** @class */ (function () {
     function DataTableBodyRowComponent(differs, scrollbarHelper, cd, element) {
         this.differs = differs;
@@ -142,25 +141,30 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         event.rowElement = this._element;
         this.activate.emit(event);
     };
-    DataTableBodyRowComponent.prototype.onKeyDown = function (event) {
-        var keyCode = event.keyCode;
-        var isTargetRow = event.target === this._element;
-        var isAction = keyCode === utils_1.Keys.return ||
-            keyCode === utils_1.Keys.down ||
-            keyCode === utils_1.Keys.up ||
-            keyCode === utils_1.Keys.left ||
-            keyCode === utils_1.Keys.right;
-        if (isAction && isTargetRow) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.activate.emit({
-                type: 'keydown',
-                event: event,
-                row: this.row,
-                rowElement: this._element
-            });
-        }
-    };
+    /*@HostListener('keydown', ['$event'])
+    onKeyDown(event: KeyboardEvent): void {
+      const keyCode = event.keyCode;
+      const isTargetRow = event.target === this._element;
+  
+      const isAction =
+        keyCode === Keys.return ||
+        keyCode === Keys.down ||
+        keyCode === Keys.up ||
+        keyCode === Keys.left ||
+        keyCode === Keys.right;
+  
+      if (isAction && isTargetRow) {
+        event.preventDefault();
+        event.stopPropagation();
+  
+        this.activate.emit({
+          type: 'keydown',
+          event,
+          row: this.row,
+          rowElement: this._element
+        });
+      }
+    }*/
     DataTableBodyRowComponent.prototype.recalculateColumns = function (val) {
         if (val === void 0) { val = this.columns; }
         this._columns = val;
@@ -230,12 +234,6 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)
     ], DataTableBodyRowComponent.prototype, "activate", void 0);
-    __decorate([
-        core_1.HostListener('keydown', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DataTableBodyRowComponent.prototype, "onKeyDown", null);
     DataTableBodyRowComponent = __decorate([
         core_1.Component({
             selector: 'datatable-body-row',
